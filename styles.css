@@ -1,146 +1,133 @@
-/* Body background with layered gradient and scalable image */
 body {
-    background: 
-      linear-gradient(135deg, #a3e635 30%, #22c55e 70%), 
-      url('https://your-image-url/background.jpg') no-repeat center center fixed; /* Replace with your background image URL */
-    background-size: cover, cover;
-    overflow: hidden;
-    position: relative;
-    font-family: Arial, sans-serif;
-    color: #ffffff;
-    text-align: center;
-    height: 100vh;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-  
-  /* Floating animation for monkeys and bananas */
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
-  }
-  
-  @keyframes drift {
-    0%, 100% { transform: translateX(0); }
-    50% { transform: translateX(10px); }
-  }
-  
-  /* Monkey icon styling */
-  .monkey {
-    background: url('https://media.discordapp.net/stickers/1288171467967823966.webp'); /* Replace with monkey image URL */
-    width: 80px;
-    height: 80px;
-    position: absolute;
-    background-size: contain;
-    background-repeat: no-repeat;
-    z-index: 2;
-    animation: float 6s ease-in-out infinite; /* Apply floating animation */
-  }
-  
-  /* Banana icon styling */
-  .narner {
-    background: url('https://cdn-icons-png.flaticon.com/512/13523/13523336.png'); /* Replace with banana image URL */
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    background-size: contain;
-    background-repeat: no-repeat;
-    z-index: 2;
-    animation: drift 5s ease-in-out infinite; /* Apply drifting animation */
-  }
-
- /* Vertical vine that moves across the screen horizontally */
-.vine {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 5px; /* Thin vine width */
-    height: 70%; /* Vertical length of the vine */
-    background-color: #8B4513;
-    z-index: 2;
-    animation: moveVineHorizontal 30s linear infinite;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end; /* Align items to the bottom */
-  }
-  
-  /* Swinging monkey styling, attached to the bottom of the vine */
-  .monkey-swing {
-    transform-origin: top center;
-    animation: swing 2s ease-in-out infinite;
-    z-index: 2;
-  }
-  
-  .monkey-swing img {
-    width: 80px; /* Adjust monkey size */
-    height: auto;
-  }
-  
-  /* Animation for swinging monkey */
-  @keyframes swing {
-    0% { transform: rotate(15deg); }
-    50% { transform: rotate(-15deg); }
-    100% { transform: rotate(15deg); }
-  }
-  
-  /* Animation for vine moving horizontally across the screen */
-  @keyframes moveVineHorizontal {
-    0% { left: -5%; }         /* Start just off-screen */
-    25% { left: 25%; }        /* Move to the left quarter */
-    50% { left: 50%; }        /* Center */
-    75% { left: 75%; }        /* Right quarter */
-    100% { left: 105%; }      /* Move off-screen to the right */
-  }
-  
-  /* Button styling */
-  .jungle-button {
-    display: inline-block; /* Make the anchor behave like a button */
-    background-color: #8B4513; /* Brown background */
-    color: #ffffff; /* White text */
-    text-decoration: none; /* Remove underline from link */
-    border: none; /* Remove default border */
-    border-radius: 5px; /* Slightly rounded corners */
-    padding: 10px 20px; /* Padding for the button */
-    font-size: 1.2rem; /* Font size */
-    cursor: pointer; /* Pointer cursor on hover */
-    margin-top: 20px; /* Space above the button */
-    transition: background-color 0.3s; /* Smooth background change */
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #ffffff;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: linear-gradient(135deg, #ffe135  20%, #29AB87 70%),
+              url('https://your-image-url/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  overflow: hidden;
 }
 
-  
-  /* Button hover effect */
-  .jungle-button:hover {
-    background-color: #6F4C3E; /* Darker brown on hover */
-  }
+.scroll-wrapper {
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes swing {
+  0% { transform: rotate(15deg); }
+  50% { transform: rotate(-15deg); }
+  100% { transform: rotate(15deg); }
+}
+
+.title {
+  animation: float 6s ease-in-out infinite;
+}
+
+.monkey {
+  background: url('https://pngimg.com/d/monkey_PNG18718.png');
+  width: 160px; height: 160px;
+}
+
+.monkey2 {
+  background: url('https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1240w,f_auto,q_auto:best/newscms/2016_22/1562491/ap_16154563031509.jpg');
+  width: 160px; height: 160px;
+}
+
+.monkey3 {
+  background: url('https://pngimg.com/d/orangutan_PNG1.png');
+  width: 160px; height: 160px;
+}
+
+.narner {
+  background: url('https://cdn-icons-png.flaticon.com/512/13523/13523336.png');
+  width: 50px; height: 50px;
+}
+
+.monkey, .monkey2, .monkey3, .narner {
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 2;
+  animation: float 6s ease-in-out infinite;
+}
 
 
-  
-  /* Position monkeys around the page */
-  .monkey-1 { top: 10%; left: 15%; animation-delay: 0s; }
-  .monkey-2 { top: 10%; right: 10%; animation-delay: 1s; }
-  .monkey-3 { bottom: 20%; left: 20%; animation-delay: 2s; }
-  .monkey-4 { bottom: 10%; right: 25%; animation-delay: 3s; }
-  
-  /* Position bananas around the page */
-  .narner-1 { top: 20%; left: 30%; animation-delay: 1.5s; }
-  .narner-2 { top: 15%; right: 17%; animation-delay: 2.5s; }
-  .narner-3 { bottom: 25%; left: 35%; animation-delay: 3.5s; }
-  .narner-4 { bottom: 15%; right: 30%; animation-delay: 4.5s; }
-  
-  /* Content styling */
-  .content {
-    z-index: 3;
-  }
-  
-  h1 {
-    font-size: 3rem;
-    margin: 0;
-  }
-  
-  p {
-    font-size: 1.5rem;
-  }
-  
+
+.vine {
+  position: absolute;
+  top: 0; left: 0;
+  width: 5px; height: 85%;
+  background-color: #8B4513;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  animation: moveVineHorizontal 30s linear infinite;
+}
+
+.monkey-swing {
+  transform-origin: top center;
+  animation: swing 2s ease-in-out infinite;
+  z-index: 2;
+}
+
+.monkey-swing img {
+  width: 100px; height: auto;
+}
+
+@keyframes moveVineHorizontal {
+  0% { left: -5%; }
+  25% { left: 25%; }
+  50% { left: 50%; }
+  75% { left: 75%; }
+  100% { left: 105%; }
+}
+
+.jungle-button {
+  display: inline-block;
+  background-color: #8B4513; 
+  color: #ffffff; 
+  text-decoration: none; 
+  border-radius: 5px; 
+  padding: 10px 20px; 
+  font-size: 1.2rem; 
+  cursor: pointer; 
+  margin-top: 20px; 
+  transition: background-color 0.3s;
+}
+
+.jungle-button:hover {
+  background-color: #6F4C3E;
+}
+
+/* Positioning styles */
+.monkey-1 { top: 10%; left: 15%; }
+.monkey-2 { top: 10%; right: 10%; }
+.monkey-3 { bottom: 20%; left: 20%; }
+.monkey-4 { bottom: 10%; right: 25%; }
+.monkey-5 { bottom: 50%; right: 50%; }
+.monkey-6 { bottom: 50%; right: 13%; }
+.narner-1 { top: 20%; left: 30%; }
+.narner-2 { top: 15%; right: 17%; }
+.narner-3 { bottom: 25%; left: 35%; }
+.narner-4 { bottom: 15%; right: 30%; }
+
+h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+p {
+  font-size: 1.5rem;
+}
