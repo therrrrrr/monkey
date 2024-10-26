@@ -8,7 +8,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: linear-gradient(135deg, #ffe135  20%, #29AB87 70%),
+  background: linear-gradient(135deg, #ffe135 20%, #29AB87 70%),
               url('https://your-image-url/background.jpg') no-repeat center center fixed;
   background-size: cover;
   overflow: hidden;
@@ -34,27 +34,31 @@ body {
   animation: float 6s ease-in-out infinite;
 }
 
+.monkey, .monkey2, .monkey3 {
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  z-index: 2;
+  width: 15vw; /* Responsive width */
+  height: 15vw; /* Maintain aspect ratio */
+}
+
 .monkey {
-  background: url('https://pngimg.com/d/monkey_PNG18718.png');
-  width: 160px; height: 160px;
+  background-image: url('https://pngimg.com/d/monkey_PNG18718.png');
 }
 
 .monkey2 {
-  background: url('https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1240w,f_auto,q_auto:best/newscms/2016_22/1562491/ap_16154563031509.jpg');
-  width: 160px; height: 160px;
+  background-image: url('https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1240w,f_auto,q_auto:best/newscms/2016_22/1562491/ap_16154563031509.jpg');
 }
 
 .monkey3 {
-  background: url('https://pngimg.com/d/orangutan_PNG1.png');
-  width: 160px; height: 160px;
+  background-image: url('https://pngimg.com/d/orangutan_PNG1.png');
 }
 
 .narner {
-  background: url('https://cdn-icons-png.flaticon.com/512/13523/13523336.png');
-  width: 50px; height: 50px;
-}
-
-.monkey, .monkey2, .monkey3, .narner {
+  background-image: url('https://cdn-icons-png.flaticon.com/512/13523/13523336.png');
+  width: 8vw; /* Responsive size */
+  height: 8vw; /* Maintain aspect ratio */
   position: absolute;
   background-size: contain;
   background-repeat: no-repeat;
@@ -62,12 +66,12 @@ body {
   animation: float 6s ease-in-out infinite;
 }
 
-
-
 .vine {
   position: absolute;
-  top: 0; left: 0;
-  width: 5px; height: 85%;
+  top: 0; 
+  left: 0;
+  width: 1vw; /* Responsive width */
+  height: 90%; /* Use percentage for responsive height */
   background-color: #8B4513;
   z-index: 2;
   display: flex;
@@ -83,7 +87,8 @@ body {
 }
 
 .monkey-swing img {
-  width: 100px; height: auto;
+  width: 8vw; /* Responsive image size */
+  height: 8vw;
 }
 
 @keyframes moveVineHorizontal {
@@ -100,8 +105,8 @@ body {
   color: #ffffff; 
   text-decoration: none; 
   border-radius: 5px; 
-  padding: 10px 20px; 
-  font-size: 1.2rem; 
+  padding: 10px 15px; 
+  font-size: 1.5rem; /* Adjusted for larger touch targets */
   cursor: pointer; 
   margin-top: 20px; 
   transition: background-color 0.3s;
@@ -112,22 +117,36 @@ body {
 }
 
 /* Positioning styles */
-.monkey-1 { top: 10%; left: 15%; }
-.monkey-2 { top: 10%; right: 10%; }
-.monkey-3 { bottom: 20%; left: 20%; }
-.monkey-4 { bottom: 10%; right: 25%; }
-.monkey-5 { bottom: 80%; right: 50%; }
-.monkey-6 { bottom: 50%; right: 13%; }
-.narner-1 { top: 20%; left: 30%; }
-.narner-2 { top: 15%; right: 17%; }
-.narner-3 { bottom: 25%; left: 35%; }
-.narner-4 { bottom: 15%; right: 30%; }
+.monkey-1 { top: 5%; left: 10%; }
+.monkey-2 { top: 5%; right: 10%; }
+.monkey-3 { bottom: 15%; left: 10%; }
+.monkey-4 { bottom: 10%; right: 10%; }
+.monkey-5 { bottom: 5%; left: 50%; transform: translateX(-50%); }
+.monkey-6 { bottom: 30%; right: 10%; }
+.narner-1 { top: 15%; left: 17%; }
+.narner-2 { top: 10%; right: 17%; }
+.narner-3 { bottom: 33%; left: 2%; }
+.narner-4 { bottom: 12%; right: 5%; }
+.narner-5 { bottom: 80%; right: 50%; }
+.narner-6 { bottom: 26%; right: 40%; }
 
 h1 {
-  font-size: 3rem;
+  font-size: 3rem; /* Larger for visibility */
   margin: 0;
 }
 
 p {
-  font-size: 1.5rem;
+  font-size: 1.5rem; /* Adjust for better readability */
+}
+
+/* Media queries for further responsiveness */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem; /* Smaller font size for mobile */
+  }
+
+  .jungle-button {
+    font-size: 1rem; /* Smaller buttons for mobile */
+    padding: 8px 10px; /* Less padding */
+  }
 }
