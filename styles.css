@@ -8,8 +8,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: linear-gradient(135deg, #ffe135 20%, #29AB87 70%),
-              url('https://your-image-url/background.jpg') no-repeat center center fixed;
+  background: linear-gradient(135deg, #ffe135 20%, #29AB87 70%);
   background-size: cover;
   overflow: hidden;
 }
@@ -30,9 +29,7 @@ body {
   100% { transform: rotate(15deg); }
 }
 
-.title {
-  animation: float 6s ease-in-out infinite;
-}
+
 
 .monkey, .monkey2, .monkey3 {
   background-size: contain;
@@ -41,22 +38,23 @@ body {
   z-index: 2;
   width: 15vw; /* Responsive width */
   height: 15vw; /* Maintain aspect ratio */
+  animation: float 10s ease-in-out infinite;
 }
 
 .monkey {
-  background-image: url('https://pngimg.com/d/monkey_PNG18718.png');
+  background-image: url('https://www.abermonkey.co.uk/monkey.png');
 }
 
 .monkey2 {
-  background-image: url('https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1240w,f_auto,q_auto:best/newscms/2016_22/1562491/ap_16154563031509.jpg');
+  background-image: url('https://www.abermonkey.co.uk/monkey2.jpg');
 }
 
 .monkey3 {
-  background-image: url('https://pngimg.com/d/orangutan_PNG1.png');
+  background-image: url('https://www.abermonkey.co.uk/monkey3.png');
 }
 
 .narner {
-  background-image: url('https://cdn-icons-png.flaticon.com/512/13523/13523336.png');
+  background-image: url('https://www.abermonkey.co.uk/narner.png');
   width: 8vw; /* Responsive size */
   height: 8vw; /* Maintain aspect ratio */
   position: absolute;
@@ -128,15 +126,15 @@ body {
 .narner-3 { bottom: 33%; left: 2%; }
 .narner-4 { bottom: 12%; right: 5%; }
 .narner-5 { bottom: 80%; right: 50%; }
-.narner-6 { bottom: 26%; right: 40%; }
+.narner-6 { bottom: 4%; right: 40%; }
 
 h1 {
-  font-size: 3rem; /* Larger for visibility */
+  font-size: 5rem; /* Larger for visibility */
   margin: 0;
 }
 
 p {
-  font-size: 1.5rem; /* Adjust for better readability */
+  font-size: 2rem; /* Adjust for better readability */
 }
 
 /* Media queries for further responsiveness */
