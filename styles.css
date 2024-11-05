@@ -97,6 +97,17 @@ body {
   100% { left: 105%; }
 }
 
+@keyframes explode {
+  to {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.exploding {
+  animation: explode 0.5s forwards;
+}
+
 .jungle-button {
   display: inline-block;
   background-color: #8B4513; 
