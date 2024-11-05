@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="title"><h1>Aberystwyth Monkey Appreciation Society</h1></div>
+  <div class="title"><h1>Aberystwyth Monkey Appreciation Society</h1></div> 
 
   <div class="monkey3 monkey-1"></div>
   <div class="monkey monkey-2"></div>
@@ -37,6 +37,47 @@
   </div>
   
 
+  <script> 
+    const explosionSoundUrl = "monkey1.mp3"; // URL of the explosion sound
+    const redirectUrl = "https://www.abermonkey.co.uk/supersecretamazingmonkeygameomg.html";    // URL to redirect when all elements are clicked, you didnt read this nerd, find out the normal way.
+  
+    // Get all monkeys and bananas
+    const elements = document.querySelectorAll(".monkey, .monkey2, .monkey3, .narner, .vine, .swingingmonkey");
+    let remainingElements = elements.length;
+  
+    function playExplosionSound() {
+      const audio = new Audio(explosionSoundUrl);
+      audio.play();
+    }
+  
+    function explodeElement(event) {
+      const element = event.target;
+  
+      // Play sound
+      playExplosionSound();
+  
+      // Add exploding class for animation
+      element.classList.add("exploding");
+  
+      // Remove the element after animation completes
+      element.addEventListener("animationend", () => {
+        element.remove();
+  
+        // Decrement remaining elements count
+        remainingElements--;
+  
+        // Redirect if all elements have been clicked
+        if (remainingElements === 0) {
+          window.location.href = redirectUrl;
+        }
+      });
+    }
+  
+    // Attach click event listeners to all monkeys and bananas
+    elements.forEach((element) => {
+      element.addEventListener("click", explodeElement);
+    });
+  </script>
   
 </body>
 </html>
